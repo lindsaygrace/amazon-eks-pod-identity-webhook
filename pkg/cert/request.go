@@ -67,6 +67,7 @@ func NewServerCertificateManager(kubeClient clientset.Interface, namespace, secr
 		},
 		CertificateStore:    certificateStore,
 		CertificateRotation: certificateRotation,
+		SignerName: "kubernetes.io/legacy-unknown",
 	})
 	if err != nil {
 		return nil, fmt.Errorf("failed to initialize server certificate manager: %v", err)
